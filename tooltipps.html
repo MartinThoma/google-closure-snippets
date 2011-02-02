@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Terminplaner Datepicker</title> 
+  <script src="../closure-library/closure/goog/base.js"></script> 
+  <script> 
+    goog.require('goog.dom');
+    goog.require('goog.ui.Tooltip');
+  </script> 
+  <script src="tooltipps.js"></script> 
+</head>
+<body> 
+  <h1>goog.ui.Tooltip</h1> 
+<img src="information.png" alt="Name der Schule" class="tipz" style="width:25px;"/>
+
+<form method="post" action="InsertSchule.php"><fieldset><legend>Schule einf&uuml;gen</legend><input type="hidden" name="do" value="insertSchule" /><table class="simple"><tr><td><label for="schule">Schulname <img src="information.png" style="width:25px;" alt="Name der Schule::z.B. Paul-Klee-Gymnasium" class="tipz"/></label></td><td colspan="3"><input type="text" name="schule" id="schule" class="long" value="Ihre Schule"/></td></tr><tr><td><label for="bundesland">Bundesland <img src="information.png" style="width:25px;" alt="Diese Information wird ben&ouml;tigt, um automatisch die Ferien eintragen zu k&ouml;nnen" class="tipz"/></label></td><td colspan="3"><select name="bundesland" id="bundesland"><option>Baden-W&uuml;rttemberg</option><option selected="selected">Bayern</option><option>Berlin</option><option>Brandenburg</option><option>Bremen</option><option>Hamburg</option><option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option><option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option><option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Th&uuml;ringen</option></select></td></tr><tr><td><label for="ort">Ort</label></td><td colspan="3"><input type="text" name="ort" id="ort" class="long" value="Ihr Ort"/></td></tr><tr><td colspan="4"><input type="submit" /></td></tr></table></fieldset></form> 
+
+<script>
+    var tip = new moose.tips('tipz');
+</script>
+</body> 
+</html> 
