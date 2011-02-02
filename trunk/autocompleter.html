@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Terminplaner Datepicker</title> 
+  <script src="../closure-library/closure/goog/base.js"></script> 
+  <script> 
+    goog.require('goog.dom');
+    goog.require('goog.ui.AutoComplete.Basic');
+  </script> 
+  <script src="autocompleter.js"></script> 
+  <link rel="stylesheet" href="css/autocomplete.css">
+</head>
+<body> 
+  <h1>Tom Cruise Film Finder</h1> 
+  <p>Type "Mission Impossible" or "Top Gun"</p>
+  <input id="txtInput"/>
+
+<script>
+    var ViewValues = ["Mission Impossible", "Top Gun"];
+    var InsertValues = ["123","345"];
+ 
+    var auto = new moose.autocompleter('txtInput', ViewValues, InsertValues);
+</script>
+</body> 
+</html> 
