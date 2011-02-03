@@ -2,19 +2,89 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <title>Terminplaner Datepicker</title> 
+  <title>Tooltipps</title> 
   <script src="../closure-library/closure/goog/base.js"></script> 
   <script> 
     goog.require('goog.dom');
     goog.require('goog.ui.Tooltip');
   </script> 
   <script src="tooltipps.js"></script> 
+  <style>
+    <!--
+    img {
+        width: 25px;
+        background-color: lime;
+    }
+
+    form {
+        width: 500px;
+    }
+    label {
+        display: inline-block;
+        width: 200px;
+    }
+    input, textarea, keygen, select, button, isindex, datagrid {
+        display: inline-block;
+        width: 200px;
+        border: 2px solid lightgrey;
+        margin: 2px 0 2px 0;
+        padding:0;
+        height: 20px;
+
+        -webkit-box-align: left;
+
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+
+        font: Arial 13px;
+        text-intend: 0;
+
+
+        letter-spacing: normal;
+        line-height: normal;
+    }
+    input[type=submit]{
+        width: 404px;           /* input.width + 2*input.border + label.width + width of newlines / spaces */
+    }
+    -->
+   </style>
+  <link rel="stylesheet" href="css/tooltipps.css"> 
 </head>
 <body> 
   <h1>goog.ui.Tooltip</h1> 
-<img src="information.png" alt="Name der Schule" class="tipz" style="width:25px;"/>
+<img src="information.png" class="tipz" alt=".goog-tooltip .tip-title::.goog-tooltip .tip-text"/>
 
-<form method="post" action="InsertSchule.php"><fieldset><legend>Schule einf&uuml;gen</legend><input type="hidden" name="do" value="insertSchule" /><table class="simple"><tr><td><label for="schule">Schulname <img src="information.png" style="width:25px;" alt="Name der Schule::z.B. Paul-Klee-Gymnasium" class="tipz"/></label></td><td colspan="3"><input type="text" name="schule" id="schule" class="long" value="Ihre Schule"/></td></tr><tr><td><label for="bundesland">Bundesland <img src="information.png" style="width:25px;" alt="Diese Information wird ben&ouml;tigt, um automatisch die Ferien eintragen zu k&ouml;nnen" class="tipz"/></label></td><td colspan="3"><select name="bundesland" id="bundesland"><option>Baden-W&uuml;rttemberg</option><option selected="selected">Bayern</option><option>Berlin</option><option>Brandenburg</option><option>Bremen</option><option>Hamburg</option><option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option><option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option><option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Th&uuml;ringen</option></select></td></tr><tr><td><label for="ort">Ort</label></td><td colspan="3"><input type="text" name="ort" id="ort" class="long" value="Ihr Ort"/></td></tr><tr><td colspan="4"><input type="submit" /></td></tr></table></fieldset></form> 
+<form method="post" action="tooltipps.html">
+  <fieldset>
+    <legend>Registration</legend>
+    <input type="hidden" name="do" value="step2" />
+
+    <label for="Username">Username <img src="information.png" alt="Username::This is the name you have to enter each time, you want to log in" class="tipz"/></label><input type="text" name="Username" id="Username" placeholder="Your Username"/>
+
+    <label for="bundesland">Bundesland <img src="information.png" alt="You have to enter this one" class="tipz"/></label>
+    <select name="bundesland" id="bundesland" required>
+    <option>Baden-W&uuml;rttemberg</option>
+    <option selected="selected">Bayern</option>
+    <option>Berlin</option><option>Brandenburg</option>
+    <option>Bremen</option><option>Hamburg</option>
+    <option>Hessen</option><option>Mecklenburg-Vorpommern</option>
+    <option>Niedersachsen</option>
+    <option>Nordrhein-Westfalen</option>
+    <option>Rheinland-Pfalz</option>
+    <option>Saarland</option>
+    <option>Sachsen</option>
+    <option>Sachsen-Anhalt</option>
+    <option>Schleswig-Holstein</option>
+    <option>Th&uuml;ringen</option>
+    </select>
+
+    <label for="City">City</label><input type="text" name="City" id="City" placeholder="Your City" required/>
+
+    <input type="submit" />
+
+  </fieldset>
+</form> 
 
 <script>
     var tip = new moose.tips('tipz');
