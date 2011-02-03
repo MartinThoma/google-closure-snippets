@@ -1,0 +1,62 @@
+img {
+  width: 25px;
+  background-color: lime;
+}
+
+form {
+  width: 500px;
+}
+label {
+  display: inline-block;
+  width: 200px;
+}
+input, textarea, keygen, select, button, isindex, datagrid {
+  display: inline-block;
+  width: 200px;
+  border: 2px solid lightgrey;
+  margin: 2px 0 2px 0;
+  padding:0;
+  height: 20px;
+
+  -webkit-box-align: left;
+
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+
+  font: Arial 13px;
+  text-intend: 0;
+
+
+  letter-spacing: normal;
+  line-height: normal;
+}
+input[type=submit]{
+  width: 404px;           /* input.width + 2*input.border + label.width + width of newlines / spaces */
+}
+#Klassen label, #Klassen input{
+  width: 20px;
+}
+
+.tableStyle1 {
+  border: 1px solid #cdcdcd;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+.tableStyle1 caption {
+  color: #ababab;
+  font-weight: bold;
+  font-family: sans-serif, Arial;
+}
+.tableStyle1 th {
+  font-weight:bold;
+  background-color: #ababab;
+  border: 1px solid #cdcdcd;
+}
+.tableStyle1 td {
+  border: 1px solid #cdcdcd;
+}
+.tableStyle1 tr.color1 {
+  background-color:#fbd5cc;
+}

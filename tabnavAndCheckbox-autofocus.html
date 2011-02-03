@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Tabnav and Checkbox Autofocus problem</title> 
+  <script src="../closure-library/closure/goog/base.js"></script> 
+  <script> 
+    goog.require('goog.dom');
+    goog.require('goog.events');
+    goog.require('goog.style');
+    goog.require('goog.ui.Checkbox');
+    goog.require('goog.ui.Checkbox.State');
+  </script> 
+  <script src="tab-nav.js"></script> 
+  <link rel="stylesheet" href="css/tabnav.css"> 
+  <script src="checkbox.js"></script> 
+  <link rel="stylesheet" href="css/checkbox.css"> 
+  <link rel="stylesheet" href="css/formstyle.css"> 
+</head>
+<body> 
+<ul id="tabnav2">
+  <li id="tab1" class="WirdAngezeigt">
+    <a href="#">My Form</a>
+  </li>
+  <li id="tab2">
+    <a href="#">My Table</a>
+  </li>
+</ul>
+
+<form method="post" id="formular" action="tabnav.php">
+  <fieldset class="long">
+    <legend>Termin einf&uuml;gen</legend>
+    <input type="hidden" name="do" value="insert" />
+    <table>
+      <tr>
+        <td><label for="ereignis">Was</label></td>
+        <td><input type="text" name="ereignis" id="ereignis" class="validate['required','length[3,-1]'] long" value="" autofocus/></td>
+      </tr>
+      <tr>
+        <td><label for="von">Wann </label></td>
+        <td>
+          <table>
+            <tr>
+              <td><input type="text" name="vonUhrzeit" id="vonUhrzeit" value="14:07" style="display:inline;width:55px;"/></td>
+              <td></td>
+              <td><input type="text" name="von" value="04.01.2011" id="von" style="display:inline;"/></td>
+              <td> bis &nbsp;</td>
+              <td><input type="text" name="bisUhrzeit" id="bisUhrzeit" value="14:52" style="display:inline;width:55px;"/></td>
+              <td> <input type="text" name="bis" value="04.01.2011" id="bis" style="display:inline;"/></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="ort">Raum / Ort</label></td>
+        <td><input type="text" name="ort" id="ort" class="long" value=""/></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div id="Klassen" class="at-least-one-checkbox">
+            <div style="float:left;">
+            <label for="k421">5a</label>
+            <input type="checkbox" id="k421" name="klasse[]" value="421"/>
+            </div>
+
+            <div style="float:left;">
+            <label for="k431">5b</label>
+            <input type="checkbox" id="k431" name="klasse[]" value="431"/></div>
+
+            <div style="float:left;">
+            <label for="k441">5c</label>
+            <input type="checkbox" id="k441" name="klasse[]" value="441"/></div>
+
+            <div style="float:left;">
+            <label for="k451">5d</label>
+            <input type="checkbox" id="k451" name="klasse[]" value="451"/></div>
+
+            <div style="float:left;">
+            <label for="k461">5e</label>
+            <input type="checkbox" id="k461" name="klasse[]" value="461"/></div>
+
+            <div style="float:left;">
+            <label for="k471">6a</label>
+            <input type="checkbox" id="k471" name="klasse[]" value="471"/></div>
+
+            <div style="float:left;">
+            <label for="k481">6b</label>
+            <input type="checkbox" id="k481" name="klasse[]" value="481"/></div>
+
+            <div style="float:left;">
+            <label for="k491">6c</label>
+            <input type="checkbox" id="k491" name="klasse[]" value="491"/></div>
+
+            <div style="float:left;">
+            <label for="k501">7a</label>
+            <input type="checkbox" id="k501" name="klasse[]" value="501"/></div>
+
+            <div style="float:left;">
+            <label for="k511">7b</label>
+            <input type="checkbox" id="k511" name="klasse[]" value="511"/></div>
+
+            <div style="float:left;">
+            <label for="k521">8a</label>
+            <input type="checkbox" id="k521" name="klasse[]" value="521"/></div>
+
+            <div style="float:left;">
+            <label for="k531">8b</label>
+            <input type="checkbox" id="k531" name="klasse[]" value="531"/></div>
+
+            <div style="float:left;">
+            <label for="k541">9a</label>
+            <input type="checkbox" id="k541" name="klasse[]" value="541"/></div>
+
+            <div style="float:left;">
+            <label for="k551">9b</label>
+            <input type="checkbox" id="k551" name="klasse[]" value="551"/></div>
+
+            <div style="float:left;">
+            <label for="k561">10a</label>
+            <input type="checkbox" id="k561" name="klasse[]" value="561"/></div>
+
+            <div style="float:left;">
+            <label for="k571">10b</label>
+            <input type="checkbox" id="k571" name="klasse[]" value="571"/></div>
+
+            <div style="float:left;">
+            <label for="k581">11a</label>
+            <input type="checkbox" id="k581" name="klasse[]" value="581"/></div>
+
+            <div style="float:left;">
+            <label for="k591">11b</label>
+            <input type="checkbox" id="k591" name="klasse[]" value="591"/></div>
+
+            <div style="float:left;">
+            <label for="k601">K12</label>
+            <input type="checkbox" id="k601" name="klasse[]" value="601"/></div>
+
+            <div style="float:left;">
+            <label for="k611">K13</label>
+            <input type="checkbox" id="k611" name="klasse[]" value="611"/>
+            </div>
+          </div>
+          <br class="killfloat"/>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <div><span id="KlassenCheckbox" class="goog-checkbox-unchecked" title="Alle Klassen ausw&auml;hlen / abw&auml;hlen"></span>Alle Klassen ausw&auml;hlen</div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="Termintyp">Termintyp</label></td>
+        <td>
+          <select name="Termintyp" id="Termintyp" class="long">
+            <option value="51">Schulaufgaben</option>
+            <option value="101">Exkursionen</option>
+            <option>Sonstiges</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="Sonstiges">Sonstiges</label></td>
+        <td><textarea name="Sonstiges" id ="Sonstiges" class="long" rows="3" cols="20"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Termin hinzuf&uuml;gen" class="long"/></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+
+
+<table class="tableStyle1" id="TabelleTermine">
+<caption>Termine 0 - 30 von 33</caption>
+<tr>
+  <th><a href="tabnavAndCheckbox.html#sort=vonDESC">von</a></th>
+  <th><a href="tabnavAndCheckbox.html#sort=bisASC">bis</a></th>
+  <th>Ereignis (Klasse)</th>
+  <th><a href="tabnavAndCheckbox.html#sort=OrtASC">Ort</a></th>
+  <th><a href="tabnavAndCheckbox.html#sort=TypASC">Typ</a></th>
+  <th>bearbeiten / l&ouml;schen</th>
+</tr>
+<tr class="color1">
+  <td>28.09.2009</td>
+  <td>30.09.2009</td>
+  <td>Ausflug (5a, 5b, 5c)</td>
+  <td>Hofgarten</td>
+  <td>Exkursionen</td>
+  <td><a href="tabnavAndCheckbox.html#id=231">edit</a> <a href="tabnavAndCheckbox.html#delete=231&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">02.10.2009</td><td>1. Englisch-SA. (5c)</td><td>Raum 123</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=2351">edit</a> <a href="tabnavAndCheckbox.html#delete=2351&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">22.10.2009</td><td>Gundremmingen (K12)</td><td>Gundremmingen</td><td>Exkursionen</td><td><a href="tabnavAndCheckbox.html#id=1211">edit</a> <a href="tabnavAndCheckbox.html#delete=1211&amp;page=1">del</a></td>
+</tr>
+<tr ><td colspan="2" style="text-align:center;">26.10.2009</td><td>Geschichtsex (K12, K13)</td><td>Raum 123</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=7331">edit</a> <a href="tabnavAndCheckbox.html#delete=7331&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">09.11.2009</td><td>1. Englisch-SA. (5c)</td><td>Raum 123</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=8271">edit</a> <a href="tabnavAndCheckbox.html#delete=8271&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">16.11.2009</td><td>1. Englisch-SA. (5b)</td><td>Raum 123</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=8281">edit</a> <a href="tabnavAndCheckbox.html#delete=8281&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td>17.11.2009</td><td>19.11.2009</td><td>Besinnungstage (K12)</td><td>Benediktbeuern</td><td>Exkursionen</td><td><a href="tabnavAndCheckbox.html#id=1261">edit</a> <a href="tabnavAndCheckbox.html#delete=1261&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">19.11.2009</td><td>1. SA Mathe (5d)</td><td>Klassenz.</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=2411">edit</a> <a href="tabnavAndCheckbox.html#delete=2411&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">11.12.2009</td><td>Englisch (5a)</td><td>
+</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=4471">edit</a> <a href="tabnavAndCheckbox.html#delete=4471&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td>10.01.2010</td><td>15.01.2010</td><td>Skilager (5a)</td><td>
+</td><td>Sonstiges</td><td><a href="tabnavAndCheckbox.html#id=5681">edit</a> <a href="tabnavAndCheckbox.html#delete=5681&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">23.02.2010</td><td>Mathe-SA (5a, 5b, 5c)</td><td>
+</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=16971">edit</a> <a href="tabnavAndCheckbox.html#delete=16971&amp;page=1">del</a></td>
+</tr>
+<tr class="color1"><td colspan="2" style="text-align:center;">12.07.2010</td><td>Mathe-Sa (5a)</td><td>
+</td><td>Schulaufgaben</td><td><a href="tabnavAndCheckbox.html#id=22721">edit</a> <a href="tabnavAndCheckbox.html#delete=22721&amp;page=1">del</a></td>
+</tr>
+<tr ><td>19.07.2010</td><td>21.07.2010</td><td>Besinnungstage (8a, 8b)</td><td>
+</td><td>Exkursionen</td><td><a href="tabnavAndCheckbox.html#id=22741">edit</a> <a href="tabnavAndCheckbox.html#delete=22741&amp;page=1">del</a></td>
+</tr>
+</table>
+
+
+
+<script>
+var tabnav= new moose.tabnav([['tab1','formular'],['tab2', 'TabelleTermine']], 0);
+var boxes = new moose.Klassencheckboxen("Klassen", "KlassenCheckbox", "div");
+</script>
+</body> 
+</html> 
