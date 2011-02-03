@@ -1,0 +1,15 @@
+.goog-tooltip {
+    background-color: #F4F9FE;
+    border: 1px solid #799ED9;
+    color: #335;
+    padding: 10px;
+}
+
+.goog-tooltip .tip-title {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.goog-tooltip .tip-text {
+    font-size: 11px;
+}
