@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>fancyForm</title> 
+  <script src="../closure-library/closure/goog/base.js"></script> 
+  <script> 
+    goog.require('goog.dom');
+    goog.require('goog.dom.classes');
+    goog.require('goog.array');
+    goog.require('goog.events');
+  </script> 
+  <script src="fancyForm.js"></script> 
+  <link rel="stylesheet" href="css/fancyForm.css"> 
+  <link rel="stylesheet" href="css/formstyle.css"> 
+</head>
+<body> 
+
+<div id="NavigationForFieldset"><span id="previousFieldsetButton">&lt;&lt; Previous</span> <span id="CurrentTitle">&nbsp;</span> <span id="nextFieldsetButton">Next &gt;&gt;</span></div>
+
+<form method="post" id="YourFormID">
+  <fieldset id="FieldsetID1">
+    <legend>Step 1</legend>
+      <label for="Username">Username</label>
+      <input type="text" id="Username" name="Username"/>
+
+      <label for="Password">Password</label>
+      <input type="password" id="Password" name="Password"/>
+  </fieldset>
+  <fieldset id="FieldsetID2">
+    <legend>Step 2</legend>
+      <label for="Street">Street</label>
+      <input type="text" id="Street" name="Street"/>
+
+      <label for="City">City</label>
+      <input type="text" id="City" name="City"/>
+
+      <label for="Country">Country</label>
+      <input type="text" id="Country" name="Country"/>
+  </fieldset>
+  <fieldset id="FieldsetID3">
+    <legend>Step 3</legend>
+      <label for="Blog">Blog-URL</label>
+      <input type="url" id="Blog" name="Blog"/>
+
+      <label for="Email">Email</label>
+      <input type="email" id="Email" name="Email"/>
+
+      <input type="submit" />
+  </fieldset>
+</form>
+
+
+<script>
+var fancyForm = new moose.fancyForm('YourFormID', 0);
+</script>
+</body> 
+</html> 
