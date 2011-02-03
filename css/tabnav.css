@@ -1,0 +1,35 @@
+#tabnav2 {
+    border-bottom: 1px solid #70A7C6;
+    font: normal normal bold 11px/normal verdana, arial, sans-serif;
+    list-style-type: none;
+    margin: 1em 0px;
+    padding: 3px 10px;
+    text-align: left;
+}
+
+#tabnav2 li {
+    background-color: white;
+    border-bottom: 1px solid white;
+    display: inline;
+    margin-left: 10px;
+}
+
+#tabnav2 li.WirdAngezeigt {
+    border-bottom: 1px solid white;
+}
+
+#tabnav2 li a {
+    background-color: #F4F9FE;
+    border: 1px solid #70A7C6;
+    color: #666;
+    margin-right: 0px;
+    padding: 3px 4px;
+    text-decoration: none;
+}
+
+#tabnav2 li.WirdAngezeigt a {
+    background-color: white;
+    border-bottom: 1px solid white;
+    color: black;
+
+}
