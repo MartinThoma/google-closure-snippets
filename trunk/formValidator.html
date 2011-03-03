@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+For this project I used http://code.google.com/p/closure-library/source/browse/trunk/closure/goog/demos/datepicker.html?r=247
+and http://code.google.com/p/closure-library/source/browse/trunk/closure/goog/demos/inputdatepicker.html?r=247 which are governed by an Apache 2.0 License (http://www.apache.org/licenses/LICENSE-2.0).
+-->
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Formcheck</title> 
+  <script src="../closure-library/closure/goog/base.js"></script> 
+  <script> 
+goog.require('goog.dom');
+goog.require('goog.dom.forms');
+goog.require('goog.events');
+goog.require('goog.ui.Bubble');
+goog.require('goog.format.EmailAddress');
+  </script> 
+  <script src="formValidator.js"></script> 
+  <link rel="stylesheet" href="css/bubble.css"> 
+</head>
+<body> 
+  <h1>Formcheck</h1> 
+<form class="formular" id="formular" method="post" action="">
+<fieldset>
+<legend>Kostenlosen Benutzeraccount erstellen</legend>
+<input type="hidden" name="do" value="CreateAccount" />
+<table class="simple">
+
+<tr>
+<td><label for="username">Username </label></td>
+<td><input type="text" name="uname" id="username" class="nodigit long" value="" required autofocus placeholder="moose"/></td>
+</tr>
+
+
+<tr>
+<td><label for="anrede">Anrede</label></td>
+<td><select name="anrede" id="anrede"><optgroup label="M&auml;nnlich"><option>Herr</option><option>Herr Dr.</option></optgroup><optgroup label="Weiblich"><option>Frau</option><option>Frau Dr.</option></optgroup></select></td>
+</tr>
+
+
+<tr>
+<td><label for="vorname">Vorname</label></td>
+<td><input type="text" name="vorname" id="vorname" class="nodigit long" value="" required placeholder="Max"/></td>
+</tr>
+
+
+<tr>
+<td><label for="nachname">Nachname </label></td>
+<td><input type="text" name="nachname" id="nachname" class="nodigit long" value="" required="required" placeholder="Mustermann"/></td>
+</tr>
+
+
+<tr>
+<td><label for="email">Email </label></td>
+<td><input type="email" name="email" id="email" class="long" placeholder="max@mustermann.de" required/></td>
+</tr>
+
+<tr><td colspan="2"><input type="submit" class="long" value="Benutzeraccount anlegen"/></td></tr>
+</table>
+
+
+<div id="Klassen" class="at-least-one-checkbox">
+
+<div style="float:left;"><label for="k421">5a</label><input type="checkbox" id="k421" name="klasse[]" value="421"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k431">5b</label><input type="checkbox" id="k431" name="klasse[]" value="431"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k441">5c</label><input type="checkbox" id="k441" name="klasse[]" value="441"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k451">5d</label><input type="checkbox" id="k451" name="klasse[]" value="451"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k461">5e</label><input type="checkbox" id="k461" name="klasse[]" value="461"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k471">6a</label><input type="checkbox" id="k471" name="klasse[]" value="471"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k481">6b</label><input type="checkbox" id="k481" name="klasse[]" value="481"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k491">6c</label><input type="checkbox" id="k491" name="klasse[]" value="491"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k501">7a</label><input type="checkbox" id="k501" name="klasse[]" value="501"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k511">7b</label><input type="checkbox" id="k511" name="klasse[]" value="511"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k1492">7c</label><input type="checkbox" id="k1492" name="klasse[]" value="1492"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k521">8a</label><input type="checkbox" id="k521" name="klasse[]" value="521"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k531">8b</label><input type="checkbox" id="k531" name="klasse[]" value="531"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k541">9a</label><input type="checkbox" id="k541" name="klasse[]" value="541"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k551">9b</label><input type="checkbox" id="k551" name="klasse[]" value="551"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k561">10a</label><input type="checkbox" id="k561" name="klasse[]" value="561"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k571">10b</label><input type="checkbox" id="k571" name="klasse[]" value="571"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k581">11a</label><input type="checkbox" id="k581" name="klasse[]" value="581"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k591">11b</label><input type="checkbox" id="k591" name="klasse[]" value="591"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k601">K12</label><input type="checkbox" id="k601" name="klasse[]" value="601"  class="validate['%checkSelection']"/></div>
+<div style="float:left;"><label for="k611">K13</label><input type="checkbox" id="k611" name="klasse[]" value="611"  class="validate['%checkSelection']"/></div>
+
+</div>
+
+
+</fieldset>
+</form> 
+
+ <script>checker = new moose.formValidator('formular');</script>
+</body> 
+</html> 
